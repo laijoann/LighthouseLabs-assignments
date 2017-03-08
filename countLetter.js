@@ -7,8 +7,8 @@ function countLetters(str) {
   if (typeof str === "string") {
     var noSpace = str.split(" ").join("");
     var uniqueChar = {};
-    for (var i = 0; i < noSpace.length; i++) {//JSON.parse(str[i]);
-      if (uniqueChar[noSpace[i]] && uniqueChar[noSpace[i]]) {
+    for (var i = 0; i < noSpace.length; i++) {
+      if (uniqueChar[noSpace[i]]) {
         uniqueChar[noSpace[i]] += 1;
       } else {
         uniqueChar[noSpace[i]] = 1;
@@ -22,5 +22,5 @@ function countLetters(str) {
 }
 
 //test cases
-console.log(countLetters("lighthouse in a house"));
+console.log(countLetters("lighthouse in the house"));
 console.log(countLetters(12345));
