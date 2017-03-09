@@ -10,21 +10,49 @@ function makeLoadedDie() {
   var currIndex = -1;
   return function() {
     /* your code here */
-    if (list.length - 1 === currIndex) {
+    if (list.length - 1 === currIndex) { //to loop through cheat die list
       currIndex = 0;
     } else {
       currIndex += 1;
     }
     return list[currIndex];
   }
-}
+};
 
 var rollLoadedDie = makeLoadedDie();
 
-console.log(rollLoadedDie());  // 5
-console.log(rollLoadedDie());  // 4
-console.log(rollLoadedDie());  // 6
+//test cases:
+console.log("Exercise 1 - ID generator:");
+console.log(rollLoadedDie()); //5
+console.log(rollLoadedDie()); //4
+console.log(rollLoadedDie()); //6
+console.log(rollLoadedDie()); //1
 
 
+//Exercise 2 – Countdown
+//Implement a function countdownGenerator() that takes in a number x and returns a function that counts down when it is called (see starter code below).
 
+var countdownGenerator = function (x) {
+  /* your code here */
+  counter = x;
 
+  return function() {
+    if (counter > 0) {
+      console.log("T-minus", counter);
+    } else if (counter === 0) {
+      console.log("Blast Off!");
+    } else {
+      console.log("Rockets already gone, bub!");
+    }
+    return counter -= 1;
+  }
+};
+
+var countdown = countdownGenerator(3);
+console.log("Exercise 2 - count down generator:");
+countdown(); // T-minus 3...
+countdown(); // T-minus 2...
+countdown(); // T-minus 1...
+countdown(); // Blast Off!
+countdown(); // Rockets already gone, bub!
+countdown(); // Rockets already gone, bub!
