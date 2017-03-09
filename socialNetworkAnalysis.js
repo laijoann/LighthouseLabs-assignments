@@ -31,6 +31,22 @@ var data = {
   }
 };
 
+//CHALLENGE TWO:
+//Identify who follows the most people
+function whoFollowsMost() {
+  var followCount = 0;
+  var followsMost;
+  for (var person in data) {
+    if (followCount < data[person].follows.length) {
+      followCount = data[person].follows.length;
+      followsMost = data[person].name;
+    }
+  }
+  return followsMost;
+}
+//to test challengeTwo;
+console.log(whoFollowsMost());
+
 //CHALLENGE ONE:
 //List everyone, who they follow, and who follows them
 function challengeOne() {
@@ -52,8 +68,6 @@ function challengeOne() {
   }
 }
 //to test challengeOne:
-console.log(challengeOne());
-
-
+//console.log(challengeOne());
 
 
