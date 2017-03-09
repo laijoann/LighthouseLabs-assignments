@@ -9,22 +9,20 @@ var students = [
   { id: 4, name: "alex",     age: 30 }
 ];
 
-
-students.sort(function (beg, end) { //sort by age
-  return beg.age - end.age;
-});
-
 students.sort(function(x, y) {
   var nameA = x.name;
   var nameB = y.name;
   if (nameA < nameB) {
-    return -1;
+    return -1; //don't swap
   } else if (nameB < nameA) {
-    return 1;
+    return 1; //do swap
   } else {
-    return 0;
+    if (x.age <= y.age) {
+      return -1;
+    } else {
+      return 1;
+    }
   }
 });
-
 
 console.log(students);
