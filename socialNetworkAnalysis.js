@@ -45,7 +45,7 @@ function whoFollowsMost() {
   return followsMost;
 }
 //to test challengeTwo;
-console.log(whoFollowsMost());
+console.log("Challenge 2: " + whoFollowsMost());
 
 //CHALLENGE ONE:
 //List everyone, who they follow, and who follows them
@@ -58,16 +58,15 @@ function challengeOne() {
       followsWho.push(data[data[person].follows[i]].name);
     }
     for (var f in data) {
-      for (var k = 0; k < data[f].follows.length; k++ ) {
-        if (data[f].follows[k] === person) {
+      if (data[f].follows.indexOf(person) > -1) {
         followers.push(data[f].name);
-        }
       }
     }
   masterArr.push(data[person].name + " - Follows: " + followsWho + ". Followers: " + followers);
   }
+  return masterArr;
 }
 //to test challengeOne:
-//console.log(challengeOne());
+console.log("Challenge 1: " + challengeOne());
 
 
