@@ -1,7 +1,3 @@
-/*Create a new script file in the same project. It should work in the same way as before (searching famous people by name) except that it should use knex instead of using the pg package.
-You'll find that the node app does not terminate and you have to CTRL+C to terminate the process. You'll need to research why this is happening and how you can fix it.
-When using the Knex API, we suggest you to use their asCallback function at the end of a function chain, for now. Their documentation suggests that you use their Promises interface instead of callbacks, because it is an easier pattern to work with. However, unless you're familiar with promises from before, it may be better to wait until to use them.*/
-
 const pg = require('pg');
 const settings = require('./settings');
 
@@ -34,4 +30,5 @@ knex.select().from('famous_people').where('first_name', argv).orWhere('last_name
     printStatement += `- ${row.id}: ${row.first_name} ${row.last_name}, born ${row.birthdate.toDateString()} \n`;
   })
   console.log(printStatement);
-})
+  knex.destroy();
+});
