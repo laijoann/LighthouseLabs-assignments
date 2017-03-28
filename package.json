@@ -1,0 +1,23 @@
+{
+  "name": "gitRepoW4D2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laijoann/LHLW4D2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laijoann/LHLW4D2/issues"
+  },
+  "homepage": "https://github.com/laijoann/LHLW4D2#readme",
+  "dependencies": {
+    "pg": "^6.1.5"
+  }
+}
