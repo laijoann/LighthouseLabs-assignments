@@ -15,11 +15,20 @@ dbQuery = () => {
   return `SELECT * FROM famous_people WHERE first_name = '${argv}' OR last_name = '${argv}'`;
 }
 
-client.connect((err) => {
-  if (err) throw err;
-  client.query(dbQuery(), (err, result) => {
+dbConnect = () => {
+  client.connect((err) => {
     if (err) throw err;
-    console.log(result.rows);
-    client.end();
+    client.query(dbQuery(), (err, result) => {
+      if (err) throw err;
+      data = result.rows;
+      client.end();
+      return dbCallback(data);
+    })
   })
-})
+}
+
+dbCallback = (data) => {
+  return console.log(data);
+}
+
+dbConnect();
